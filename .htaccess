@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^cms.cayenneapp.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.cms.cayenneapp.com$
+RewriteCond %{REQUEST_URI} !cms/
+RewriteRule (.*) /cms/$1 [L]
+RewriteCond %{HTTP_HOST} ^cayenneapp.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.cayenneapp.com$
+RewriteCond %{REQUEST_URI} !laravel/public/
+RewriteRule (.*) /laravel/public/$1 [L]
